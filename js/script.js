@@ -28,7 +28,7 @@ function submitSignupForm() {
 
         console.log(options)
 
-        fetch('http://localhost:8080/signup', options)
+        fetch('http://localhost:3306/register', options)
             .then(data => {
                 if (!data.ok) {
                     throw Error(data.status);
