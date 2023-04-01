@@ -34,8 +34,6 @@
         <!-- Template Stylesheet -->
         <link href="/css/style.css" rel="stylesheet">
 
-        <a href="{{ url_for('contact') }}" class="nav-item nav-link">Contact</a>
-
         <img src="{{ url_for('static', filename='static/img/IMG_6554.jpg') }}" alt="Custom Image">
         <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
         <script src="{{ url_for('static', filename='custom/custom.js') }}"></script>
@@ -55,9 +53,9 @@
 </button>
 <div class="collapse navbar-collapse" id="navbarCollapse">
     <div class="navbar-nav ms-auto py-0 me-n3">
-        <a href="index.html" class="nav-item nav-link active">Home</a>
-        <a href="about.html" class="nav-item nav-link">About</a>
-        <a href="service.html" class="nav-item nav-link">Service</a>
+        <a href="{{ url_for('homepage') }}" class="nav-item nav-link active">Home</a>
+        <a href="{{ url_for('about') }}" class="nav-item nav-link">About</a>
+        <a href="{{ url_for('service') }}" class="nav-item nav-link">Service</a>
         <div class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">THE HUB</a>
             <div class="dropdown-menu m-0">
@@ -67,10 +65,10 @@
             </div>
         </div>
         <div>
-            <a href="contact.html" class="nav-item nav-link">Contact</a>
+            <a href="{{ url_for('contact') }}" class="nav-item nav-link">Contact</a>
         </div>
         <div>
-            <a href="login.html" class="nav-item nav-link">Login</a>
+            <a href="{{ url_for('login') }}" class="nav-item nav-link">Login</a>
         </div>
     </div>
 </div></nav><!-- Navbar End --><!-- Carousel Start --><div class="container-fluid p-0">

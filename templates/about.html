@@ -30,6 +30,11 @@
 
   <!-- Template Stylesheet -->
   <link href="css/style.css" rel="stylesheet" />
+  <img src="{{ url_for('static', filename='static/img/IMG_6554.jpg') }}" alt="Custom Image">
+  <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='custom/custom.js') }}"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='custom/custom.css') }}"></head>
 </head>
 <div>
 
@@ -46,7 +51,7 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <div class="navbar-nav ms-auto py-0 me-n3">
         <a href="index.html" class="nav-item nav-link active">Home</a>
-        <a href="about.html" class="nav-item nav-link">About</a>
+        <a href="{{ url_for('about') }}" class="nav-item nav-link">About</a>
         <a href="service.html" class="nav-item nav-link">Service</a>
         <div class="nav-item dropdown">
           <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">THE HUB</a>
@@ -100,7 +105,7 @@
       </div>
       <div class="col-lg-6">
         <div class="display-6 mb-4">
-          <img class="w-100" src="img/IMG_6554.jpg" alt="Image" />
+          <img class="w-100" src="static/img/IMG_6554.jpg" alt="Image" />
           <p class="fst-italic">We have a dedicated team of professionals prepared to meet your needs</p>
         </div>
 
