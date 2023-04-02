@@ -9,7 +9,7 @@
   <meta content="ExperioLearn" name="description" />
 
   <!-- Favicon -->
-  <link href="img/pro-icon.png" rel="icon" />
+  <link rel="icon" type="image/jpg" href="static/img/images.jpg">
 
   <!-- Google Web Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,7 +30,7 @@
 
   <!-- Template Stylesheet -->
   <link href="css/style.css" rel="stylesheet" />
-  <img src="{{ url_for('static', filename='static/img/IMG_6554.jpg') }}" alt="Custom Image">
+  <img src="{{ url_for('static', filename='static/img/IMG_6554.jpg') }}" alt="">
   <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
   <script src="{{ url_for('static', filename='custom/custom.js') }}"></script>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
@@ -58,7 +58,6 @@
           <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">THE HUB</a>
           <div class="dropdown-menu m-0">
             <a href="{{ url_for('hub') }}" class="nav-item nav-link">Hub</a>
-            <a href="{{ url_for('testimonial') }}" class="nav-item nav-link">Testimonial</a>
             <a href="{{ url_for('blog') }}" class="nav-item nav-link">Blog</a>
         </div>
         </div>

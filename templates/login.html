@@ -9,7 +9,7 @@
     <meta content="Internship" name="description">
 
     <!-- Favicon -->
-    <link href="img/pro-icon.png" rel="icon">
+    <link rel="icon" type="image/jpg" href="static/img/images.jpg">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +28,7 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <img src="{{ url_for('static', filename='static/img/IMG_6554.jpg') }}" alt="Custom Image">
+    <img src="{{ url_for('static', filename='static/img/IMG_6554.jpg') }}" alt="">
     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
     <script src="{{ url_for('static', filename='custom/custom.js') }}"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
@@ -77,8 +77,7 @@
                                     <a href="userprofile.html"> <button type="button" class="col-12 btn btn-primary btn-block mb-4">Sign
                                         in</button></a>
                                 </div>
-                                <p class="text-center"> Don't have account yet?<a href="register.html"
-                                        class="text-primary"> Sign up</a></p>
+                                <p class="text-center"> Don't have account yet?<a href="{{ url_for('register') }}" class="nav-item nav-link">Register Here</a></p>
                             </form>
                         </div>
                     </div>

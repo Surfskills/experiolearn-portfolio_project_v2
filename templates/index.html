@@ -10,8 +10,7 @@
         content="Internship" name="description">
 
         <!-- Favicon -->
-        <link
-        href="img/img/pro-icon.png" rel="icon">
+        <link rel="icon" type="image/jpg" href="static/img/images.jpg">
 
         <!-- Google Web Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,7 +33,7 @@
         <!-- Template Stylesheet -->
         <link href="/css/style.css" rel="stylesheet">
 
-        <img src="{{ url_for('static', filename='static/img/IMG_6554.jpg') }}" alt="Custom Image">
+        <img src="{{ url_for('static', filename='img/IMG_6554.jpg') }}" alt="">
         <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
         <script src="{{ url_for('static', filename='custom/custom.js') }}"></script>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
@@ -62,7 +61,6 @@
             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">THE HUB</a>
             <div class="dropdown-menu m-0">
                 <a href="{{ url_for('hub') }}" class="nav-item nav-link">Hub</a>
-                <a href="{{ url_for('testimonial') }}" class="nav-item nav-link">Testimonial</a>
                 <a href="{{ url_for('blog') }}" class="nav-item nav-link">Blog</a>
             </div>
         </div>
@@ -73,17 +71,19 @@
             <a href="{{ url_for('login') }}" class="nav-item nav-link">Login</a>
         </div>
     </div>
-</div></nav><!-- Navbar End --><!-- Carousel Start --><div class="container-fluid p-0">
+</div></nav><!-- Navbar End -->
+<!-- Carousel Start -->
+<div class="container-fluid p-0">
 <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img class="w-100" src="static/img/IMG_6554.jpg" alt="Image">
+            <img class="w-100" src="static/img/IMG_6554.jpg" alt="">
             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                 <div class="p-3" style="max-width: 900px;">
                     <h5 class="text-white text-uppercase">Professional Development Journey</h5>
                     <h1 class="display-1 text-white mb-md-4">Define your professional growth with us</h1>
-                    <a href="register.html" class="btn btn-secondary py-md-3 px-md-5 rounded-pill">Get
-                                                                                        Started</a>
+                    <button type="button" class="btn btn-primary"><a href="register.html" style="color:white">Get Started</a></button>
+
                 </div>
             </div>
         </div>
