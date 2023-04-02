@@ -53,15 +53,17 @@
 </button>
 <div class="collapse navbar-collapse" id="navbarCollapse">
     <div class="navbar-nav ms-auto py-0 me-n3">
-        <a href="{{ url_for('homepage') }}" class="nav-item nav-link active">Home</a>
+        <a href="{{ url_for('index') }}" class="nav-item nav-link"></a>
+        <a href="{{ url_for('home_page') }}" class="nav-item nav-link">Home</a>
         <a href="{{ url_for('about') }}" class="nav-item nav-link">About</a>
-        <a href="{{ url_for('service') }}" class="nav-item nav-link">Service</a>
+        <a href="{{ url_for('services') }}" class="nav-item nav-link">Services</a>
+
         <div class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">THE HUB</a>
             <div class="dropdown-menu m-0">
-                <a href="Hub.html" class="dropdown-item">Hub</a>
-                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                <a href="blog.html" class="dropdown-item">Blog</a>
+                <a href="{{ url_for('hub') }}" class="nav-item nav-link">Hub</a>
+                <a href="{{ url_for('testimonial') }}" class="nav-item nav-link">Testimonial</a>
+                <a href="{{ url_for('blog') }}" class="nav-item nav-link">Blog</a>
             </div>
         </div>
         <div>
