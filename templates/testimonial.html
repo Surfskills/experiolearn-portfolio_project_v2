@@ -33,10 +33,11 @@
     <script src="{{ url_for('static', filename='custom/custom.js') }}"></script>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='custom/custom.css') }}"></head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='custom/custom.css') }}">
+</head>
 
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+<!-- Template Stylesheet -->
+<link href="css/style.css" rel="stylesheet">
 </head>
 
 <div>
@@ -64,11 +65,11 @@
                     </div>
                 </div>
                 <a href="{{ url_for('contact') }}" class="nav-item nav-link">Contact</a>
-                </div>
-                <div>
-                    <a href="{{ url_for('login') }}" class="nav-item nav-link">Login</a>
-                </div>
             </div>
+            <div>
+                <a href="{{ url_for('login') }}" class="nav-item nav-link">Login</a>
+            </div>
+        </div>
     </nav>
     <!-- Navbar End -->
 
@@ -181,7 +182,7 @@
             <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
             <!-- Javascript Code-->
-            <script src="js/main.js"></script>
+            
             </body>
 
 </html>

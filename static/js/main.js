@@ -186,8 +186,3 @@ $("#signupform").submit(function(event) {
   //   $('#result').text('failed');
   // });
 });
-
-//Redirecting get stared to register page
-function redirectToRegister() {
-    window.location.href = "register.html";
-}

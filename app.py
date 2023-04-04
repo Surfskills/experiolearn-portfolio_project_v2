@@ -31,9 +31,32 @@ def home_page():
 def about():
     return render_template('about.html')
 
-@app.route('/register')
+# Route for rendering the registration form
+@app.route('/register', methods=['GET'])
 def register():
     return render_template('register.html')
+
+# Route for handling the registration form submission
+@app.route('/register', methods=['POST'])
+def register_submit():
+    email = request.form['email']
+    password = request.form['password']
+    confirmpassword = request.form['confirmpassword']
+    
+    # Check if password and confirm password fields match
+    if password != confirmpassword:
+        return 'Error: Passwords do not match'
+    
+    # Check if user with the same email already exists in the database
+    if User.query.filter_by(email=email).first():
+        return 'Error: User with the same email already exists'
+    
+    # Create a new user and add it to the database
+    user = User(email=email, password=password)
+    db.session.add(user)
+    db.session.commit()
+    
+    return 'User registered successfully!'
 
 @app.route('/login')
 def login():

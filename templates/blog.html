@@ -22,302 +22,289 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <img src="{{ url_for('static', filename='static/img/IMG_6554.jpg') }}" alt="">
-    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='custom/custom.js') }}"></script>
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='custom/custom.css') }}"></head>
+    <div>
 
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-</head>
-<div>
-
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
-        <a href="index.html" class="navbar-brand p-0">
-            <h1 class="text-primary"></i>ExperioLearn</h1>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto py-0 me-n3">
-                <a href="index.html" class="nav-item nav-link active"></a>
-                <a href="{{ url_for('home_page') }}" class="nav-item nav-link">Home</a>
-                <a href="{{ url_for('about') }}" class="nav-item nav-link">About</a>
-                <a href="{{ url_for('services') }}" class="nav-item nav-link">Services</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">THE HUB</a>
-                    <div class="dropdown-menu m-0">
-                        <a href="{{ url_for('hub') }}" class="nav-item nav-link">Hub</a>
-                        <a href="{{ url_for('blog') }}" class="nav-item nav-link">Blog</a>
+        <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand p-0">
+                <h1 class="text-primary"></i>ExperioLearn</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0 me-n3">
+                    <a href="index.html" class="nav-item nav-link active"></a>
+                    <a href="{{ url_for('home_page') }}" class="nav-item nav-link">Home</a>
+                    <a href="{{ url_for('about') }}" class="nav-item nav-link">About</a>
+                    <a href="{{ url_for('services') }}" class="nav-item nav-link">Services</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">THE HUB</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="{{ url_for('hub') }}" class="nav-item nav-link">Hub</a>
+                            <a href="{{ url_for('blog') }}" class="nav-item nav-link">Blog</a>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="{{ url_for('contact') }}" class="nav-item nav-link">Contact</a>
+                    </div>
+                    <div>
+                        <a href="{{ url_for('login') }}" class="nav-item nav-link">Login</a>
                     </div>
                 </div>
-                <div>
-                    <a href="{{ url_for('contact') }}" class="nav-item nav-link">Contact</a>
-                </div>
-                <div>
-                    <a href="{{ url_for('login') }}" class="nav-item nav-link">Login</a>
-                </div>
-            </div>
-    </nav>
-    <!-- Navbar End -->
+        </nav>
+        <!-- Navbar End -->
 
-    <!-- Page Header Start -->
-    <div class="container-fluid bg-dark p-5">
-        <div class="row">
-            <div class="col-12 text-center">
-                <h1 class="display-4 text-white">Blog</h1>
+        <!-- Page Header Start -->
+        <div class="container-fluid bg-dark p-5">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="display-4 text-white">Blog</h1>
+                </div>
             </div>
         </div>
-    </div>
-    <!-- Page Header End -->
+        <!-- Page Header End -->
 
-    <!-- Blog Start -->
-    <div class="container-fluid py-6 px-5">
-        <div class="row g-5">
-            <!-- Blog list Start -->
-            <div class="col-lg-8">
-                <div class="row g-5">
-                    <div class="col-xl-6 col-lg-12 col-md-6">
-                        <div class="blog-item">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid" src="static/img/blog1.jpg" alt="">
-                            </div>
-                            <div class="bg-secondary d-flex">
-                                <div
-                                    class="flex-shrink-0 d-flex flex-column justify-content-center text-center bg-primary text-white px-4">
-                                    <span>01</span>
-                                    <h5 class="text-uppercase m-0">Jan</h5>
-                                    <span>2045</span>
+        <!-- Blog Start -->
+        <div class="container-fluid py-6 px-5">
+            <div class="row g-5">
+                <!-- Blog list Start -->
+                <div class="col-lg-8">
+                    <div class="row g-5">
+                        <div class="col-xl-6 col-lg-12 col-md-6">
+                            <div class="blog-item">
+                                <div class="position-relative overflow-hidden">
+                                    <img class="img-fluid" src="static/img/blog1.jpg" alt="">
                                 </div>
-                                <div class="d-flex flex-column justify-content-center py-3 px-4">
-                                    <div class="d-flex mb-2">
-                                        <small class="text-uppercase me-3"><i
-                                                class="bi bi-person me-2"></i>Admin</small>
-                                        <small class="text-uppercase me-3"><i class="bi bi-bookmarks me-2"></i>Web
-                                            Design</small>
+                                <div class="bg-secondary d-flex">
+                                    <div
+                                        class="flex-shrink-0 d-flex flex-column justify-content-center text-center bg-primary text-white px-4">
+                                        <span>01</span>
+                                        <h5 class="text-uppercase m-0">Jan</h5>
+                                        <span>2045</span>
                                     </div>
-                                    <a class="h4" href="">Magna sea dolor ipsum amet lorem eos</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-12 col-md-6">
-                        <div class="blog-item">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid" src="static/img/blog2.jpg" alt="">
-                            </div>
-                            <div class="bg-secondary d-flex">
-                                <div
-                                    class="flex-shrink-0 d-flex flex-column justify-content-center text-center bg-primary text-white px-4">
-                                    <span>01</span>
-                                    <h5 class="text-uppercase m-0">Jan</h5>
-                                    <span>2045</span>
-                                </div>
-                                <div class="d-flex flex-column justify-content-center py-3 px-4">
-                                    <div class="d-flex mb-2">
-                                        <small class="text-uppercase me-3"><i
-                                                class="bi bi-person me-2"></i>Admin</small>
-                                        <small class="text-uppercase me-3"><i class="bi bi-bookmarks me-2"></i>Web
-                                            Design</small>
+                                    <div class="d-flex flex-column justify-content-center py-3 px-4">
+                                        <div class="d-flex mb-2">
+                                            <small class="text-uppercase me-3"><i
+                                                    class="bi bi-person me-2"></i>Admin</small>
+                                            <small class="text-uppercase me-3"><i class="bi bi-bookmarks me-2"></i>Web
+                                                Design</small>
+                                        </div>
+                                        <a class="h4" href="">Magna sea dolor ipsum amet lorem eos</a>
                                     </div>
-                                    <a class="h4" href="">Magna sea dolor ipsum amet lorem eos</a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-12 col-md-6">
-                        <div class="blog-item">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid" src="static/img/blog3.jpg" alt="">
-                            </div>
-                            <div class="bg-secondary d-flex">
-                                <div
-                                    class="flex-shrink-0 d-flex flex-column justify-content-center text-center bg-primary text-white px-4">
-                                    <span>01</span>
-                                    <h5 class="text-uppercase m-0">Jan</h5>
-                                    <span>2045</span>
+                        <div class="col-xl-6 col-lg-12 col-md-6">
+                            <div class="blog-item">
+                                <div class="position-relative overflow-hidden">
+                                    <img class="img-fluid" src="static/img/blog2.jpg" alt="">
                                 </div>
-                                <div class="d-flex flex-column justify-content-center py-3 px-4">
-                                    <div class="d-flex mb-2">
-                                        <small class="text-uppercase me-3"><i
-                                                class="bi bi-person me-2"></i>Admin</small>
-                                        <small class="text-uppercase me-3"><i class="bi bi-bookmarks me-2"></i>Web
-                                            Design</small>
+                                <div class="bg-secondary d-flex">
+                                    <div
+                                        class="flex-shrink-0 d-flex flex-column justify-content-center text-center bg-primary text-white px-4">
+                                        <span>01</span>
+                                        <h5 class="text-uppercase m-0">Jan</h5>
+                                        <span>2045</span>
                                     </div>
-                                    <a class="h4" href="">Magna sea dolor ipsum amet lorem eos</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-12 col-md-6">
-                        <div class="blog-item">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid" src="static/img/blog4.png" alt="">
-                            </div>
-                            <div class="bg-secondary d-flex">
-                                <div
-                                    class="flex-shrink-0 d-flex flex-column justify-content-center text-center bg-primary text-white px-4">
-                                    <span>01</span>
-                                    <h5 class="text-uppercase m-0">Jan</h5>
-                                    <span>2045</span>
-                                </div>
-                                <div class="d-flex flex-column justify-content-center py-3 px-4">
-                                    <div class="d-flex mb-2">
-                                        <small class="text-uppercase me-3"><i
-                                                class="bi bi-person me-2"></i>Admin</small>
-                                        <small class="text-uppercase me-3"><i class="bi bi-bookmarks me-2"></i>Web
-                                            Design</small>
+                                    <div class="d-flex flex-column justify-content-center py-3 px-4">
+                                        <div class="d-flex mb-2">
+                                            <small class="text-uppercase me-3"><i
+                                                    class="bi bi-person me-2"></i>Admin</small>
+                                            <small class="text-uppercase me-3"><i class="bi bi-bookmarks me-2"></i>Web
+                                                Design</small>
+                                        </div>
+                                        <a class="h4" href="">Magna sea dolor ipsum amet lorem eos</a>
                                     </div>
-                                    <a class="h4" href="">Magna sea dolor ipsum amet lorem eos</a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-12">
-                        <nav aria-label="Page navigation">
-                            <ul class="pagination pagination-lg m-0">
-                                <li class="page-item disabled">
-                                    <a class="page-link rounded-0" href="#" aria-label="Previous">
-                                        <span aria-hidden="true"><i class="bi bi-arrow-left"></i></span>
-                                    </a>
-                                </li>
-                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link rounded-0" href="#" aria-label="Next">
-                                        <span aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            <!-- Blog list End -->
-
-            <!-- Sidebar Start -->
-            <div class="col-lg-4">
-                <!-- Search Form Start -->
-                <div class="mb-5">
-                    <div class="input-group">
-                        <input type="text" class="form-control p-3" placeholder="Keyword">
-                        <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
-                    </div>
-                </div>
-                <!-- Search Form End -->
-
-                <!-- Recent Post Start -->
-                <div class="mb-5">
-                    <h2 class="mb-4">Recent Post</h2>
-                    <div class="d-flex mb-3">
-                        <img class="img-fluid" src="static/img/blog5.jpg"
-                            style="width: 100px; height: 100px; object-fit: cover;" alt="">
-                        <a href="" class="h5 d-flex align-items-center bg-secondary px-3 mb-0">Lorem ipsum dolor sit
-                            amet adipis elit
-                        </a>
-                    </div>
-                    <div class="d-flex mb-3">
-                        <img class="img-fluid" src="static/img/blog7.jpg"
-                            style="width: 100px; height: 100px; object-fit: cover;" alt="">
-                        <a href="" class="h5 d-flex align-items-center bg-secondary px-3 mb-0">Lorem ipsum dolor sit
-                            amet adipis elit
-                        </a>
-                    </div>
-                    <div class="d-flex mb-3">
-                        <img class="img-fluid" src="static/img/blog6.png"
-                            style="width: 100px; height: 100px; object-fit: cover;" alt="">
-                        <a href="" class="h5 d-flex align-items-center bg-secondary px-3 mb-0">Lorem ipsum dolor sit
-                            amet adipis elit
-                        </a>
-                    </div>
-                    <div class="d-flex mb-3">
-                        <img class="img-fluid" src="static/img/career-development-circle-.webp"
-                            style="width: 100px; height: 100px; object-fit: cover;" alt="">
-                        <a href="" class="h5 d-flex align-items-center bg-secondary px-3 mb-0">Lorem ipsum dolor sit
-                            amet adipis elit
-                        </a>
-                    </div>
-                </div>
-                <!-- Recent Post End -->
-
-                <!-- Footer Start -->
-
-            </div>
-            <div class="container-fluid bg-dark text-secondary p-5">
-                <div class="row g-5">
-                    <div class="col-lg-3 col-md-6">
-                        <h3 class="text-white mb-4">Quick Links</h3>
-                        <div class="d-flex flex-column justify-content-start">
-                            <a class="text-secondary mb-2" href="#"><i
-                                    class="bi bi-arrow-right text-primary me-2"></i>Home</a>
-                            <a class="text-secondary mb-2" href="#"><i
-                                    class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
-                            <a class="text-secondary mb-2" href="#"><i
-                                    class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
-                            <a class="text-secondary" href="#"><i
-                                    class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
+                        <div class="col-xl-6 col-lg-12 col-md-6">
+                            <div class="blog-item">
+                                <div class="position-relative overflow-hidden">
+                                    <img class="img-fluid" src="static/img/blog3.jpg" alt="">
+                                </div>
+                                <div class="bg-secondary d-flex">
+                                    <div
+                                        class="flex-shrink-0 d-flex flex-column justify-content-center text-center bg-primary text-white px-4">
+                                        <span>01</span>
+                                        <h5 class="text-uppercase m-0">Jan</h5>
+                                        <span>2045</span>
+                                    </div>
+                                    <div class="d-flex flex-column justify-content-center py-3 px-4">
+                                        <div class="d-flex mb-2">
+                                            <small class="text-uppercase me-3"><i
+                                                    class="bi bi-person me-2"></i>Admin</small>
+                                            <small class="text-uppercase me-3"><i class="bi bi-bookmarks me-2"></i>Web
+                                                Design</small>
+                                        </div>
+                                        <a class="h4" href="">Magna sea dolor ipsum amet lorem eos</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <h3 class="text-white mb-4">Get In Touch</h3>
-                        <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>Cyber 10, Kwa Jeshi, Mwihoko, Kiambu</p>
-                        <p class="mb-2"><i class="bi bi-envelope-open text-primary me-2"></i>cyberten4@gmail.com</p>
-                        <p class="mb-0"><i class="bi bi-telephone text-primary me-2"></i>0759530335</p>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <h3 class="text-white mb-4">Follow Us</h3>
-                        <div class="d-flex">
-                            <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i
-                                    class="fab fa-twitter fw-normal"></i></a>
-                            <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i
-                                    class="fab fa-facebook-f fw-normal"></i></a>
-                            <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i
-                                    class="fab fa-linkedin-in fw-normal"></i></a>
-                            <a class="btn btn-lg btn-primary btn-lg-square rounded-circle" href="#"><i
-                                    class="fab fa-instagram fw-normal"></i></a>
+                        <div class="col-xl-6 col-lg-12 col-md-6">
+                            <div class="blog-item">
+                                <div class="position-relative overflow-hidden">
+                                    <img class="img-fluid" src="static/img/blog4.png" alt="">
+                                </div>
+                                <div class="bg-secondary d-flex">
+                                    <div
+                                        class="flex-shrink-0 d-flex flex-column justify-content-center text-center bg-primary text-white px-4">
+                                        <span>01</span>
+                                        <h5 class="text-uppercase m-0">Jan</h5>
+                                        <span>2045</span>
+                                    </div>
+                                    <div class="d-flex flex-column justify-content-center py-3 px-4">
+                                        <div class="d-flex mb-2">
+                                            <small class="text-uppercase me-3"><i
+                                                    class="bi bi-person me-2"></i>Admin</small>
+                                            <small class="text-uppercase me-3"><i class="bi bi-bookmarks me-2"></i>Web
+                                                Design</small>
+                                        </div>
+                                        <a class="h4" href="">Magna sea dolor ipsum amet lorem eos</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <h3 class="text-white mb-4">Visit Us</h3>
-                        <div class="d-flex">
-                            <iframe class="position-relative w-100 h-25"
-                                src=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.9229719787418!2d36.955852814274216!3d-1.2138505358926448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f41c2b7799ae5%3A0x3e524955d2389c3e!2sSurfskills%20Analytics%20%26%20Cyber%2010.!5e0!3m2!1sen!2ske!4v1672161996730!5m2!1sen!2ske"
-                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <div class="col-12">
+                            <nav aria-label="Page navigation">
+                                <ul class="pagination pagination-lg m-0">
+                                    <li class="page-item disabled">
+                                        <a class="page-link rounded-0" href="#" aria-label="Previous">
+                                            <span aria-hidden="true"><i class="bi bi-arrow-left"></i></span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link rounded-0" href="#" aria-label="Next">
+                                            <span aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="container-fluid bg-dark text-secondary text-center border-top py-4 px-5"
-                style="border-color: rgba(256, 256, 256, .1) !important;">
-                <p class="m-0">&copy; <a class="text-secondary border-bottom" href="#">ExperioLearn</a>. All Rights
-                    Reserved. Designed by Surfskills Anaytics & Cyber Cafe <a class="text-secondary border-bottom"
-                        href="https://htmlcodex.com"></a></p>
-                <!-- Footer End -->
+                <!-- Blog list End -->
 
-                <!-- Back to Top -->
-                <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i
-                        class="bi bi-arrow-up"></i></a>
+                <!-- Sidebar Start -->
+                <div class="col-lg-4">
+                    <!-- Search Form Start -->
+                    <div class="mb-5">
+                        <div class="input-group">
+                            <input type="text" class="form-control p-3" placeholder="Keyword">
+                            <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
+                        </div>
+                    </div>
+                    <!-- Search Form End -->
 
-                <!-- JavaScript Libraries -->
-                <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-                <script src="lib/easing/easing.min.js"></script>
-                <script src="lib/waypoints/waypoints.min.js"></script>
-                <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+                    <!-- Recent Post Start -->
+                    <div class="mb-5">
+                        <h2 class="mb-4">Recent Post</h2>
+                        <div class="d-flex mb-3">
+                            <img class="img-fluid" src="static/img/blog5.jpg"
+                                style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                            <a href="" class="h5 d-flex align-items-center bg-secondary px-3 mb-0">Lorem ipsum dolor sit
+                                amet adipis elit
+                            </a>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <img class="img-fluid" src="static/img/blog7.jpg"
+                                style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                            <a href="" class="h5 d-flex align-items-center bg-secondary px-3 mb-0">Lorem ipsum dolor sit
+                                amet adipis elit
+                            </a>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <img class="img-fluid" src="static/img/blog6.png"
+                                style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                            <a href="" class="h5 d-flex align-items-center bg-secondary px-3 mb-0">Lorem ipsum dolor sit
+                                amet adipis elit
+                            </a>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <img class="img-fluid" src="static/img/career-development-circle-.webp"
+                                style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                            <a href="" class="h5 d-flex align-items-center bg-secondary px-3 mb-0">Lorem ipsum dolor sit
+                                amet adipis elit
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Recent Post End -->
 
-                <!-- Javascript Code -->
-                <script src="js/main.js"></script>
-                </body>
+                    <!-- Footer Start -->
 
+                </div>
+                <div class="container-fluid bg-dark text-secondary p-5">
+                    <div class="row g-5">
+                        <div class="col-lg-3 col-md-6">
+                            <h3 class="text-white mb-4">Quick Links</h3>
+                            <div class="d-flex flex-column justify-content-start">
+                                <a class="text-secondary mb-2" href="#"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+                                <a class="text-secondary mb-2" href="#"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
+                                <a class="text-secondary mb-2" href="#"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
+                                <a class="text-secondary" href="#"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6">
+                            <h3 class="text-white mb-4">Get In Touch</h3>
+                            <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>Cyber 10, Kwa Jeshi, Mwihoko,
+                                Kiambu</p>
+                            <p class="mb-2"><i class="bi bi-envelope-open text-primary me-2"></i>cyberten4@gmail.com</p>
+                            <p class="mb-0"><i class="bi bi-telephone text-primary me-2"></i>0759530335</p>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <h3 class="text-white mb-4">Follow Us</h3>
+                            <div class="d-flex">
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i
+                                        class="fab fa-twitter fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i
+                                        class="fab fa-facebook-f fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i
+                                        class="fab fa-linkedin-in fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded-circle" href="#"><i
+                                        class="fab fa-instagram fw-normal"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <h3 class="text-white mb-4">Visit Us</h3>
+                            <div class="d-flex">
+                                <iframe class="position-relative w-100 h-25"
+                                    src=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.9229719787418!2d36.955852814274216!3d-1.2138505358926448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f41c2b7799ae5%3A0x3e524955d2389c3e!2sSurfskills%20Analytics%20%26%20Cyber%2010.!5e0!3m2!1sen!2ske!4v1672161996730!5m2!1sen!2ske"
+                                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid bg-dark text-secondary text-center border-top py-4 px-5"
+                    style="border-color: rgba(256, 256, 256, .1) !important;">
+                    <p class="m-0">&copy; <a class="text-secondary border-bottom" href="#">ExperioLearn</a>. All Rights
+                        Reserved. Designed by Surfskills Anaytics & Cyber Cafe <a class="text-secondary border-bottom"
+                            href="https://htmlcodex.com"></a></p>
+                    <!-- Footer End -->
+
+                    <!-- Back to Top -->
+                    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i
+                            class="bi bi-arrow-up"></i></a>
+
+                    <!-- JavaScript Libraries -->
+
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+                    <!-- Javascript Code -->
+
+                    </body>
 </html>
