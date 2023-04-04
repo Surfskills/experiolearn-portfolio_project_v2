@@ -1,22 +1,24 @@
-from flask import Flask, request, jsonify, render_template, request, redirect, url_for, session
 from flask_bootstrap import Bootstrap
 import mysql.connector
 import MySQLdb.cursors
 import re  
+from flask import Flask, render_template, request, redirect, url_for, session
+from flask_mysqldb import MySQL
 
-app = Flask(__name__, template_folder='templates')
 
+  
+  
 app = Flask(__name__)
-bootstrap = Bootstrap(app)
-
-
-# Connect to MySQL database
-db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="@#Linkedin1",
-    database="user_profile_db"
-)
+  
+  
+app.secret_key = ''
+  
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = ''
+app.config['MYSQL_DB'] = 'experiolearn'
+  
+mysql = MySQL(app)
 
 
 @app.route('/')
@@ -26,41 +28,65 @@ def index():
 @app.route('/home_page')
 def home_page():
     return render_template('home_page.html')
-
-@app.route('/about')
-def about():
-    return render_template('about.html')
-
-# Route for rendering the registration form
-@app.route('/register', methods=['GET'])
+  
+@app.route('/register', methods =['GET', 'POST'])
 def register():
-    return render_template('register.html')
-
-# Route for handling the registration form submission
-@app.route('/register', methods=['POST'])
-def register_submit():
-    email = request.form['email']
-    password = request.form['password']
-    confirmpassword = request.form['confirmpassword']
-    
-    # Check if password and confirm password fields match
-    if password != confirmpassword:
-        return 'Error: Passwords do not match'
-    
-    # Check if user with the same email already exists in the database
-    if User.query.filter_by(email=email).first():
-        return 'Error: User with the same email already exists'
-    
-    # Create a new user and add it to the database
-    user = User(email=email, password=password)
-    db.session.add(user)
-    db.session.commit()
-    
-    return 'User registered successfully!'
+    mesage = ''
+    if request.method == 'POST' and 'name' in request.form and 'password' in request.form and 'email' in request.form :
+        userName = request.form['name']
+        password = request.form['password']
+        email = request.form['email']
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM user WHERE email = % s', (email, ))
+        account = cursor.fetchone()
+        if account:
+            mesage = 'Account already exists !'
+        elif not re.match(r'[^@]+@[^@]+\.[^@]+', email):
+            mesage = 'Invalid email address !'
+        elif not userName or not password or not email:
+            mesage = 'Please fill out the form !'
+        else:
+            cursor.execute('INSERT INTO user VALUES (NULL, % s, % s, % s)', (userName, email, password, ))
+            mysql.connection.commit()
+            mesage = 'You have successfully registered !'
+    elif request.method == 'POST':
+        mesage = 'Please fill out the form !'
+    return render_template('register.html', mesage = mesage)
 
 @app.route('/login')
 def login():
     return render_template('login.html')
+
+@app.route('/login', methods =['GET', 'POST'])
+def login_form():
+    mesage = ''
+    if request.method == 'POST' and 'email' in request.form and 'password' in request.form:
+        email = request.form['email']
+        password = request.form['password']
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM user WHERE email = % s AND password = % s', (email, password, ))
+        user = cursor.fetchone()
+        if user:
+            session['loggedin'] = True
+            session['userid'] = user['userid']
+            session['name'] = user['name']
+            session['email'] = user['email']
+            mesage = 'Logged in successfully !'
+            return render_template('user.html', mesage = mesage)
+        else:
+            mesage = 'Please enter correct email / password !'
+    return render_template('login.html', mesage = mesage)
+
+@app.route('/logout')
+def logout():
+    session.pop('loggedin', None)
+    session.pop('userid', None)
+    session.pop('email', None)
+    return redirect(url_for('login'))
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 @app.route('/contact')
 def contact():
