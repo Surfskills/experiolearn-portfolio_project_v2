@@ -64,6 +64,7 @@ def register():
             cursor.execute('INSERT INTO user (name, email, password) VALUES (%s, %s, %s)', (userName, email, password,))
             mysql.connection.commit()
             mesage = 'You have successfully registered !'
+            return redirect(url_for('login'))
     elif request.method == 'POST':
         mesage = 'Please fill out the form !'
     return render_template('register.html', mesage = mesage)
