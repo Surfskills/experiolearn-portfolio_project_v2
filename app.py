@@ -68,6 +68,11 @@ def register():
     elif request.method == 'POST':
         mesage = 'Please fill out the form !'
     return render_template('register.html', mesage = mesage)
+
+    #Dashboard
+@app.route('/my_dashboard')
+def my_dashboard():
+    return render_template('my_dashboard.html')
     
 if __name__ == "__main__":
     app.run()
