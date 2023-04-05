@@ -17,6 +17,33 @@ app.config['MYSQL_DB'] = 'experiolearn'
 mysql = MySQL(app)
   
 @app.route('/')
+def index():
+    return render_template('home_page.html')
+
+@app.route('/home_page')
+def home_page():
+    return render_template('home_page.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/services')
+def services():
+    return render_template('services.html')
+
+@app.route('/hub')
+def hub():
+    return render_template('hub.html')
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+@app.route('/blog')
+def blog():
+    return render_template('blog.html')
+
 @app.route('/login', methods =['GET', 'POST'])
 def login():
     mesage = ''
