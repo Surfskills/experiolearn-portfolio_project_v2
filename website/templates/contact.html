@@ -39,24 +39,26 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0 me-n3">
-                <a href="index.html" class="nav-item nav-link active"></a>
-                <a href="{{ url_for('home_page') }}" class="nav-item nav-link">Home</a>
-                <a href="{{ url_for('about') }}" class="nav-item nav-link">About</a>
-                <a href="{{ url_for('services') }}" class="nav-item nav-link">Services</a>
+                <a href='index' class="nav-item nav-link"></a>
+                <a href='home_page' class="nav-item nav-link">Home</a>
+                <a href='about' class="nav-item nav-link">About</a>
+                <a href='services' class="nav-item nav-link">Services</a>
+
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">THE HUB</a>
                     <div class="dropdown-menu m-0">
-                        <a href="{{ url_for('hub') }}" class="nav-item nav-link">Hub</a>
-                        <a href="{{ url_for('blog') }}" class="nav-item nav-link">Blog</a>
+                        <a href='hub' class="nav-item nav-link">Hub</a>
+                        <a href='blog' class="nav-item nav-link">Blog</a>
                     </div>
                 </div>
                 <div>
-                    <a href="{{ url_for('contact') }}" class="nav-item nav-link">Contact</a>
+                    <a href='contact' class="nav-item nav-link">Contact</a>
                 </div>
                 <div>
-                    <a href="{{ url_for('login') }}" class="nav-item nav-link">Login</a>
+                    <a href='login' class="nav-item nav-link">Login</a>
                 </div>
             </div>
+        </div>
     </nav>
     <!-- Navbar End -->
 

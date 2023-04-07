@@ -9,7 +9,7 @@
     <meta content="Internship" name="description">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/jpg" href="static/img/images.jpg">
+    <link href="img/pro-icon.png" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,13 +22,14 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
     <!-- Template Stylesheet -->
-
- 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-
-
-</html>
+    <link href="css/style.css" rel="stylesheet">
 </head>
 <div>
 
@@ -42,50 +43,53 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0 me-n3">
-                <a href="{{ url_for('index') }} class="nav-item nav-link"></a>
-                <a href="{{ url_for('home_page') }}" class="nav-item nav-link">Home</a>
-                <a href="{{ url_for('about') }}" class="nav-item nav-link">About</a>
-                <a href="{{ url_for('services') }}" class="nav-item nav-link">Services</a>
+                <a href='index' class="nav-item nav-link"></a>
+                <a href='home_page' class="nav-item nav-link">Home</a>
+                <a href='about' class="nav-item nav-link">About</a>
+                <a href='services' class="nav-item nav-link">Services</a>
 
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">THE HUB</a>
                     <div class="dropdown-menu m-0">
-                        <a href="{{ url_for('hub') }}" class="nav-item nav-link">Hub</a>
-                        <a href="{{ url_for('blog') }}" class="nav-item nav-link">Blog</a>
+                        <a href='hub' class="nav-item nav-link">Hub</a>
+                        <a href='blog' class="nav-item nav-link">Blog</a>
                     </div>
                 </div>
                 <div>
-                    <a href="{{ url_for('contact') }}" class="nav-item nav-link">Contact</a>
+                    <a href='contact' class="nav-item nav-link">Contact</a>
                 </div>
                 <div>
-                    <a href="{{ url_for('login') }}" class="nav-item nav-link">Login</a>
+                    <a href='login' class="nav-item nav-link">Login</a>
                 </div>
             </div>
         </div>
-    </nav><!-- Navbar End --><!-- Carousel Start -->
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Carousel Start -->
     <div class="container-fluid p-0">
         <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="w-100" src="static/img/IMG_6554.jpg" alt="Image">
+                    <img class="w-100" src="img/IMG_6554.jpg" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
                             <h5 class="text-white text-uppercase">Professional Development Journey</h5>
                             <h1 class="display-1 text-white mb-md-4">Define your professional growth with us</h1>
-                            <a href="{{ url_for('register') }}" class="nav-item nav-link" style="color:white">Get
-                                Started</a></button>
+                            <a href="register.html" class="btn btn-secondary py-md-3 px-md-5 rounded-pill">Get Started</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div><!-- Carousel End --><!-- About Start -->
+    </div>
+    <!-- Carousel End -->
+
+    <!-- About Start -->
     <div class="container-fluid bg-secondary p-0">
         <div class="row g-0">
             <div class="col-lg-6 py-6 px-5">
-                <h1 class="display-5 mb-4">Welcome To
-                    <span class="text-primary">EperioLearn</span>
-                </h1>
+                <h1 class="display-5 mb-4">Welcome To <span class="text-primary">EperioLearn</span></h1>
                 <h4 class="text-primary mb-4">Experential Learning Beyond Classroom</h4>
                 <p class="mb-4">Experience hands-on experience training throughout your internship journey utilizing our
                     platform features. We help you plan for your internship, track your progress with the management,
@@ -135,7 +139,10 @@
                 </div>
             </div>
         </div>
-    </div><!-- About End --><!-- Services Start -->
+    </div>
+    <!-- About End -->
+
+    <!-- Services Start -->
     <div class="container-fluid pt-6 px-5">
         <div class="text-center mx-auto mb-5" style="max-width: 900px;">
             <h1 class="display-5 mb-0">What We Offer</h1>
@@ -163,8 +170,7 @@
                     <h3 class="mb-3">Assessment</h3>
                     <p class="mb-0">We assess the progress performance of interns during their internship journey. We
                         seek to understand if the interns have identfied opportunities and may require redefining of
-                        their internship objectives
-                    </p>
+                        their internship objectives </p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
@@ -199,75 +205,64 @@
                     <div class="col-lg-2 col-md-6">
                         <h3 class="text-white mb-4">Quick Links</h3>
                         <div class="d-flex flex-column justify-content-start">
-                            <a class="text-secondary mb-2" href="#">
-                                <i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
-                            <a class="text-secondary mb-2" href="#">
-                                <i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
-                            <a class="text-secondary" href="#">
-                                <i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
+                            <a class="text-secondary mb-2" href="#"><i
+                                    class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+                            <a class="text-secondary mb-2" href="#"><i
+                                    class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
+                            <a class="text-secondary" href="#"><i
+                                    class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h3 class="text-white mb-4">Get In Touch</h3>
-                        <p class="mb-2">
-                            <i class="bi bi-geo-alt text-primary me-2"></i>Cyber 10, Kwa Jeshi, Mwihoko,
-                            Kiambu
-                        </p>
-                        <p class="mb-2">
-                            <i class="bi bi-envelope-open text-primary me-2"></i>cyberten4@gmail.com
-                        </p>
-                        <p class="mb-0">
-                            <i class="bi bi-telephone text-primary me-2"></i>0759530335
-                        </p>
+                        <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>Cyber 10, Kwa Jeshi, Mwihoko,
+                            Kiambu</p>
+                        <p class="mb-2"><i class="bi bi-envelope-open text-primary me-2"></i>cyberten4@gmail.com</p>
+                        <p class="mb-0"><i class="bi bi-telephone text-primary me-2"></i>0759530335</p>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h3 class="text-white mb-4">Follow Us</h3>
                         <div class="d-flex">
-                            <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#">
-                                <i class="fab fa-twitter fw-normal"></i>
-                            </a>
-                            <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#">
-                                <i class="fab fa-facebook-f fw-normal"></i>
-                            </a>
-                            <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#">
-                                <i class="fab fa-linkedin-in fw-normal"></i>
-                            </a>
+                            <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i
+                                    class="fab fa-twitter fw-normal"></i></a>
+                            <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i
+                                    class="fab fa-facebook-f fw-normal"></i></a>
+                            <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i
+                                    class="fab fa-linkedin-in fw-normal"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h3 class="text-white mb-4">Visit Us</h3>
                         <div class="d-flex">
                             <iframe class="position-relative w-100 h-25"
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.9229719787418!2d36.955852814274216!3d-1.2138505358926448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f41c2b7799ae5%3A0x3e524955d2389c3e!2sSurfskills%20Analytics%20%26%20Cyber%2010.!5e0!3m2!1sen!2ske!4v1672161996730!5m2!1sen!2ske"
-                                width="" 600" height=" 450" style=" border:0;" allowfullscreen=" " loading=" lazy"
-                                referrerpolicy=" no-referrer-when-downgrade"></iframe>
+                                src=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.9229719787418!2d36.955852814274216!3d-1.2138505358926448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f41c2b7799ae5%3A0x3e524955d2389c3e!2sSurfskills%20Analytics%20%26%20Cyber%2010.!5e0!3m2!1sen!2ske!4v1672161996730!5m2!1sen!2ske"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="container-fluid bg-dark text-secondary text-center border-top py-4 px-5"
                 style="border-color: rgba(256, 256, 256, .1) !important;">
-                <p class="m-0">&copy;
-                    <a class="text-secondary border-bottom" href="#">ExperioLearn</a>. All Rights
-                    Reserved. Designed by Surfskills Analytics & Cyber Cafe
-                    <a class="text-secondary border-bottom" href="https://htmlcodex.com"></a>
-                </p>
+                <p class="m-0">&copy; <a class="text-secondary border-bottom" href="#">ExperioLearn</a>. All Rights
+                    Reserved. Designed by Surfskills Analytics & Cyber Cafe <a class="text-secondary border-bottom"
+                        href="https://htmlcodex.com"></a></p>
             </div>
             <!-- Footer End -->
 
             <!-- Back to Top -->
-            <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top">
-                <i class="bi bi-arrow-up"></i>
-            </a>
+            <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i
+                    class="bi bi-arrow-up"></i></a>
 
             <!-- JavaScript Libraries -->
             <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="lib/easing/easing.min.js"></script>
+            <script src="lib/waypoints/waypoints.min.js"></script>
+            <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
             <!-- Javascript Code -->
-
+            <script src="js/main.js"></script>
             </body>
 
-            </html>
-
-            </html>
+</html>
