@@ -20,15 +20,16 @@ app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'experiolearn'
 
-mysql = MySQL(app)
+
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root@localhost/experiolearn'
 
-db = SQLAlchemy(app)
+
 
 from website import create_app
 app = create_app()
 app.secret_key = 'xyzsdfg' 
+
 
 if __name__ == "__main__":
     app.run()
