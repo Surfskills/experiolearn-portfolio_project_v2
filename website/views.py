@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template
 from flask_login import current_user
+from flask import session
 
 views = Blueprint('views', __name__)
 
@@ -9,7 +10,11 @@ def index():
 
 @views.route('/home_page')
 def home_page():
-    return render_template('home_page.html')
+    if 'user_id' in session:
+        user = User.query.filter_by(id=session['user_id']).first()
+        return render_template('home_age.html', logged_in=True, username=user.name)
+    else:
+        return render_template('home_page.html', logged_in=False)
 
 @views.route('/about')
 def about():
@@ -30,3 +35,11 @@ def contact():
 @views.route('/userprofile')
 def userprofile():
     return render_template('userprofile.html')
+
+@views.route('/my_dashboard')
+def my_dashboard():
+    return render_template('my_dashboard.html')
+
+@views.route('/profile')
+def profile():
+    return render_template('profile.html')

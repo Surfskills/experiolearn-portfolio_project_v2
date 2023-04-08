@@ -2,115 +2,95 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>EXPERIOLEARN -Internship Management Platform</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="ExperioLearn name=" keywords">
-    <meta content="Internship" name="description">
+    <meta charset="utf-8" />
+    <title>EXPERIOLEARN - Internship Management Platform</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="ExperioLearn" name="keywords" />
+    <meta content="ExperioLearn" name="description" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/jpg" href="static/img/images.jpg">
 
     <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
         href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" />
 
     <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <img src="{{ url_for('static', filename='static/img/IMG_6554.jpg') }}" alt="">
-    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='custom/custom.js') }}"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='custom/custom.css') }}"></head>
 
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .animation {
+            animation-name: example;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes example {
+            0% {
+                background-color: rgb(201, 189, 189);
+            }
+
+            50% {
+                background-color: rgb(229, 166, 147);
+            }
+
+            100% {
+                background-color: white;
+            }
+        }
+
+        #empty-container {
+            height: 100px;
+        }
+    </style>
 </head>
 
-<div class="container">
-	<br>
-	<div class="row">	
-		Logged in : <strong>{{session.name}} | <a href='logout'> Logout</a>
-	</div>
-	<br><br>
-	<div class="row">
-        <div>
+<body>
+    <div>
+        <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-md navbar-light bg-light" style="width: 80%; margin: 0 auto;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="container">
 
-            <div class="container rounded bg-white mt-5 mb-5">
-                <div class="row">
-                    <div class="col-md-3 border-right">
-                        
-                        <label for="formFileMultiple" class="form-label">Upload Resume</label>
-                        <input class="form-control" type="file" id="formFileMultiple" multiple />
-                    </div>
-                    <div class="col-md-5 border-right">
-                        <div class="p-3 py-5">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h4 class="text-right">Profile Settings</h4>
-                            </div>
-                            <div class="row mt-2">
-                                <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control"
-                                        placeholder="first name" value=""></div>
-                                <div class="col-md-6"><label class="labels">Surname</label><input type="text"
-                                        class="form-control" value="" placeholder="surname"></div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text"
-                                        class="form-control" placeholder="enter phone number" value=""></div>
-                                <div class="col-md-12"><label class="labels">Duration of Stay</label><input type="text"
-                                        class="form-control" placeholder="enter monthsof stay" value=""></div>
-                                <div class="col-md-12"><label class="labels">Education Level</label><input type="text"
-                                        class="form-control" placeholder="enter level of education" value=""></div>
-                                <div class="col-md-12"><label class="labels">Course Studied</label><input type="text"
-                                        class="form-control" placeholder="enter course" value=""></div>
-                                <div class="col-md-12"><label class="labels">University & Yr of Grad.</label><input type="text"
-                                        class="form-control" placeholder="institution & grad. yr." value=""></div>
-        
-                                <div class="col-md-12"><label class="labels">Email ID</label><input type="text"
-                                        class="form-control" placeholder="enter email id" value=""></div>
-                                <div class="col-md-12"><label class="labels">Interest Areas</label><input type="text"
-                                        class="form-control" placeholder="enter your specialization" value=""></div>
-                            </div>
-                            <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save
-                                    Profile</button></div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-                         <a href='my_dashboard'
-                            class="d-flex flex-column align-items-center text-center btn btn-secondary py-md-3 px-md-5 rounded-pill">My
-                            Dashboard</a>
-                        </div>
-                        <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-                            <a href="logform.html"
-                               class="d-flex flex-column align-items-center text-center btn btn-secondary py-md-3 px-md-5 rounded-pill">Manager's Log</a>
-                           </div>
-                    </div>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href='home_page' class="nav-item nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                        <li class="nav-item">
+                            <a href='profile' class="nav-item nav-link">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href='my_dashboard' class="nav-item nav-link">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Manager's Log</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ml-auto">
+                    <strong>{{ current_user.name }}</strong> | <a href='logout'>Logout</a>
                 </div>
             </div>
-        </div>
-	</div>		
-</div>
-</div>
-<!-- JavaScript Libraries -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/waypoints/waypoints.min.js"></script>
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        </nav>
+        <!-- Navbar End -->
 
-<!-- Javascript Code-->
-<script src="js/main.js"></script>
-</body>
+        <!-- Animation Start -->
+        <div class="animation"  style="height: 650px;"></div>
+        <!-- Animation End -->
 
-</html>
+        <!-- Empty Container Start -->
+        <div id="empty-container"></div>
+        <!-- Empty Container End -->
+
+

@@ -24,7 +24,7 @@ def login():
             return redirect(url_for('auth.login'))
 
         login_user(user, remember=remember)
-        return redirect(url_for('views.home_page'))
+        return redirect(url_for('views.userprofile'))
 
     return render_template('login.html')
 
@@ -54,10 +54,9 @@ def register():
 
 
 @auth.route('/logout')
-@login_required
 def logout():
     logout_user()
-    return redirect(url_for('views.home'))
+    return redirect(url_for('views.home_page'))
 
 @auth.route('/')
 def index():
@@ -91,3 +90,34 @@ def blog():
 @login_required
 def userprofile():
     return render_template('userprofile.html')
+
+@auth.route('/my_dashboard')
+def my_dashboard():
+    return render_template('my_dashboard.html')
+
+@auth.route('/profile')
+def profile():
+    add_data = ("INSERT INTO users "
+            "(name, surname, mobile_number, duration_of_stay, education_level, course_studied, university_grad_year, email, interest_areas) "
+            "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)")
+
+    # retrieve form data from POST request
+    if request.method == 'POST':
+        name = request.form['name']
+        surname = request.form['surname']
+        mobile_number = request.form['mobile_number']
+        duration_of_stay = request.form['duration_of_stay']
+        education_level = request.form['education_level']
+        course_studied = request.form['course_studied']
+        university_grad_year = request.form['university_grad_year']
+        email = request.form['email']
+        interest_areas = request.form['interest_areas']
+
+        # insert form data into table
+        data = (name, surname, mobile_number, duration_of_stay, education_level, course_studied, university_grad_year, email, interest_areas)
+        cursor.execute(add_data, data)
+        cnx.commit()
+
+        return render_template('profile.html')
+    else:
+        return render_template('profile.html')
