@@ -3,11 +3,9 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from .models import User
 from .database import db
 from flask_login import login_user, logout_user, login_required, current_user
-
+from . import auth
 
 auth = Blueprint('auth', __name__)
-
-
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
@@ -95,29 +93,32 @@ def userprofile():
 def my_dashboard():
     return render_template('my_dashboard.html')
 
-@auth.route('/profile')
-def profile():
-    add_data = ("INSERT INTO users "
-            "(name, surname, mobile_number, duration_of_stay, education_level, course_studied, university_grad_year, email, interest_areas) "
-            "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)")
+@auth.route('/submit-form', methods=['GET', 'POST'])
+@login_required
+def submit_form():
+    user_id = current_user.id
+    user = User.query.get(user_id)
 
-    # retrieve form data from POST request
     if request.method == 'POST':
-        name = request.form['name']
-        surname = request.form['surname']
-        mobile_number = request.form['mobile_number']
-        duration_of_stay = request.form['duration_of_stay']
-        education_level = request.form['education_level']
-        course_studied = request.form['course_studied']
-        university_grad_year = request.form['university_grad_year']
-        email = request.form['email']
-        interest_areas = request.form['interest_areas']
+        first_name = request.form.get('firstname')
+        last_name = request.form.get('secondname')
+        mobile_number = request.form.get('phone')
+        duration_of_stay = request.form.get('duration')
+        education_level = request.form.get('education')
+        course_studied = request.form.get('course')
+        university_grad_year = request.form.get('university')
+        interest_areas = request.form.get('interests')
 
-        # insert form data into table
-        data = (name, surname, mobile_number, duration_of_stay, education_level, course_studied, university_grad_year, email, interest_areas)
-        cursor.execute(add_data, data)
-        cnx.commit()
+        new_user = User(first_name=first_name, last_name=last_name, mobile_number=mobile_number, 
+                duration_of_stay=duration_of_stay, education_level=education_level, 
+                course_studied=course_studied, university_grad_year=university_grad_year,
+                interests=interest_areas)
 
-        return render_template('profile.html')
-    else:
-        return render_template('profile.html')
+
+        db.session.commit()
+
+        return redirect(url_for('auth.profile'))
+
+    return render_template('submit_form.html')
+
+

@@ -1,6 +1,8 @@
 from flask import Blueprint, render_template
 from flask_login import current_user
 from flask import session
+from flask import request
+
 
 views = Blueprint('views', __name__)
 
@@ -40,6 +42,13 @@ def userprofile():
 def my_dashboard():
     return render_template('my_dashboard.html')
 
+
 @views.route('/profile')
 def profile():
     return render_template('profile.html')
+
+
+
+@views.route('/submit_form')
+def submit_form():
+    return render_template('submit_form.html')

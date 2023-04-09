@@ -12,26 +12,47 @@
           <input class="form-control" type="file" id="formFileMultiple" multiple />
         </div>
         <div class="col-md-5 border-right">
-          <div class="p-3 py-5">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-              <h4 class="text-right">Profile Settings</h4>
-            </div>
+          <form method="post" action="submit-form">
             <div class="row mt-2">
-              <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" placeholder="first name" value=""></div>
-              <div class="col-md-6"><label class="labels">Surname</label><input type="text" class="form-control" value="" placeholder="surname"></div>
+              <div class="col-md-6">
+                <label class="labels">First Name</label>
+                <input type="text" class="form-control" placeholder="first name" name="firstname">
+              </div>
+              <div class="col-md-6">
+                <label class="labels">last Name</label>
+                <input type="text" class="form-control" placeholder="last name" name="lastname">
+              </div>
             </div>
             <div class="row mt-3">
-              <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="enter phone number" value=""></div>
-              <div class="col-md-12"><label class="labels">Duration of Stay</label><input type="text" class="form-control" placeholder="enter months of stay" value=""></div>
-              <div class="col-md-12"><label class="labels">Education Level</label><input type="text" class="form-control" placeholder="enter level of education" value=""></div>
-              <div class="col-md-12"><label class="labels">Course Studied</label><input type="text" class="form-control" placeholder="enter course" value=""></div>
-              <div class="col-md-12"><label class="labels">University & Yr of Grad.</label><input type="text" class="form-control" placeholder="institution & grad. yr." value=""></div>
-              <div class="col-md-12"><label class="labels">Email ID</label><input type="text" class="form-control" placeholder="enter email id" value=""></div>
-              <div class="col-md-12"><label class="labels">Interest Areas</label><input type="text" class="form-control" placeholder="enter your specialization" value=""></div>
+              <div class="col-md-12">
+                <label class="labels">Mobile Number</label>
+                <input type="text" class="form-control" placeholder="enter phone number" name="phone">
+              </div>
+              <div class="col-md-12">
+                <label class="labels">Duration of Stay</label>
+                <input type="text" class="form-control" placeholder="enter months of stay" name="duration">
+              </div>
+              <div class="col-md-12">
+                <label class="labels">Education Level</label>
+                <input type="text" class="form-control" placeholder="enter level of education" name="education">
+              </div>
+              <div class="col-md-12">
+                <label class="labels">Course Studied</label>
+                <input type="text" class="form-control" placeholder="enter course" name="course">
+              </div>
+              <div class="col-md-12">
+                <label class="labels">University &amp; Yr of Grad.</label>
+                <input type="text" class="form-control" placeholder="institution &amp; grad. yr." name="university">
+              </div>
+              <div class="col-md-12">
+                <label class="labels">Interest Areas</label>
+                <input type="text" class="form-control" placeholder="enter your specialization" name="interests">
+              </div>
             </div>
-            <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Save Profile</button></div>
-          </div>
-          
+            <div class="mt-5 text-center">
+              <button class="btn btn-primary profile-button" type="submit">Save Profile</button>
+            </div>
+          </form>
         </div>
         <div class="col-md-4">
             <div class="ml-auto">
