@@ -33,6 +33,14 @@ def register():
         name = request.form.get('name')
         email = request.form.get('email')
         password = request.form.get('password')
+        first_name = request.form.get('first_name') or ''
+        last_name = request.form.get('last_name') or ''
+        mobile_number = request.form.get('mobile_number') or ''
+        duration_of_stay = request.form.get('duration_of_stay') or ''
+        education_level = request.form.get('education_level') or ''
+        course_studied = request.form.get('course_studied') or ''
+        university_grad_year = request.form.get('university_grad_year') or ''
+        interests = request.form.get('interests') or ''
 
         user = User.query.filter_by(email=email).first()
 
@@ -40,8 +48,11 @@ def register():
             flash('Email address already exists')
             return redirect(url_for('auth.register'))
 
-        new_user = User(name=name, email=email, password_hash=generate_password_hash(password, method='sha256'))
-
+        new_user = User(name=name, email=email, password_hash=generate_password_hash(password, method='sha256'),
+                        first_name=first_name, last_name=last_name, mobile_number=mobile_number,
+                        duration_of_stay=duration_of_stay, education_level=education_level,
+                        course_studied=course_studied, university_grad_year=university_grad_year,
+                        interests=interests)
         db.session.add(new_user)
         db.session.commit()
 
@@ -49,6 +60,7 @@ def register():
         return redirect(url_for('auth.login'))
 
     return render_template('register.html')
+
 
 
 @auth.route('/logout')
@@ -93,32 +105,21 @@ def userprofile():
 def my_dashboard():
     return render_template('my_dashboard.html')
 
-@auth.route('/submit-form', methods=['GET', 'POST'])
+@auth.route('/submit-form', methods=['POST'])
 @login_required
 def submit_form():
-    user_id = current_user.id
-    user = User.query.get(user_id)
 
-    if request.method == 'POST':
-        first_name = request.form.get('firstname')
-        last_name = request.form.get('secondname')
-        mobile_number = request.form.get('phone')
-        duration_of_stay = request.form.get('duration')
-        education_level = request.form.get('education')
-        course_studied = request.form.get('course')
-        university_grad_year = request.form.get('university')
-        interest_areas = request.form.get('interests')
+    current_user.first_name = request.form.get('firstname')
+    current_user.last_name = request.form.get('lastname')
+    current_user.mobile_number = request.form.get('mobile')
+    current_user.duration_of_stay = request.form.get('duration')
+    current_user.education_level = request.form.get('education')
+    current_user.course_studied = request.form.get('course')
+    current_user.university_grad_year = request.form.get('universitygradyear')
+    current_user.interests = request.form.get('interests')
 
-        new_user = User(first_name=first_name, last_name=last_name, mobile_number=mobile_number, 
-                duration_of_stay=duration_of_stay, education_level=education_level, 
-                course_studied=course_studied, university_grad_year=university_grad_year,
-                interests=interest_areas)
+    db.session.commit()
+    return render_template('userprofile.html')
 
-
-        db.session.commit()
-
-        return redirect(url_for('auth.profile'))
-
-    return render_template('submit_form.html')
 
 
