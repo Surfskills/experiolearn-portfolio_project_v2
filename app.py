@@ -5,6 +5,9 @@ from flaskext.mysql import MySQL
 from flask_session import Session
 import MySQLdb.cursors
 import re
+from flask_wtf.csrf import CSRFProtect
+
+
 
 app = Flask(__name__)
 app.config["SESSION_PERMANENT"] = False

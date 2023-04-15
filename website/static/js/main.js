@@ -186,3 +186,12 @@ $("#signupform").submit(function(event) {
   //   $('#result').text('failed');
   // });
 });
+//DELETE A NOTE
+function deleteNote(noteId) {
+  fetch("/delete-note", {
+    method: "POST",
+    body: JSON.stringify({ noteId: noteId }),
+  }).then((_res) => {
+    window.location.href = window.location.pathname; // redirect to the same page
+  });
+}

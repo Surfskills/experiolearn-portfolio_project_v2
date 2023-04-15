@@ -84,6 +84,11 @@ def about():
 def services():
     return render_template('services.html')
 
+@auth.route('/deliverable_form')
+@login_required
+def deliverable_form():
+    return render_template('deliverable_form.html', user=current_user)
+
 @auth.route('/hub')
 def hub():
     return render_template('hub.html')
@@ -102,8 +107,12 @@ def userprofile():
     return render_template('userprofile.html')
 
 @auth.route('/my_dashboard')
+@login_required
 def my_dashboard():
-    return render_template('my_dashboard.html')
+    user = get_current_user() # get the current user from your database
+    notes = get_user_notes(user) # get the notes for the current user from your database
+    context = {'user': user, 'notes': notes}
+    return render_template('my_dashboard.html', **context)
 
 @auth.route('/submit-form', methods=['POST'])
 @login_required

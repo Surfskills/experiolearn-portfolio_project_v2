@@ -1,0 +1,58 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>EXPERIOLEARN - Internship Management Platform</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ExperioLearn" name="keywords">
+    <meta content="Internship" name="description">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpg" href="static/img/images.jpg">
+
+
+
+            {% extends "base.html" %}
+
+            {% block title %}
+              Home
+            {% endblock %}
+            
+            {% block content %}
+              <div class="container my-5">
+                <h1 class="text-center mb-4">Notes</h1>
+                <form method="POST" class="my-4">
+                    <div class="form-group">
+                      <textarea name="note" id="note" class="form-control"></textarea>
+                    </div>
+                    <div class="text-center">
+                      <button type="submit" class="btn btn-primary">Add Deriverable</button>
+                    </div>
+                  </form>
+                <ul class="list-group list-group-flush" id="notes">
+                  {% for note in user.notes %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      {{ note.data }}
+                      <button type="button" class="close" onClick="deleteNote({{ note.id }})">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </li>
+                  {% endfor %}
+                </ul>
+               
+              </div>
+            {% endblock %}
+
+
+
+
+
+
+
+

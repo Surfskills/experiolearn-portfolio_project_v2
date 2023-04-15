@@ -18,7 +18,7 @@ class User(UserMixin, db.Model):
     university_grad_year = db.Column(db.Integer, nullable=True)
     interests = db.Column(db.String(100), nullable=True)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
-
+    notes = db.relationship('Note')
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
@@ -28,3 +28,12 @@ class User(UserMixin, db.Model):
 
     def __repr__(self):
         return '<User {}>'.format(self.first_name)
+
+
+class Note(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    data = db.Column(db.String(10000))
+    date = db.Column(db.DateTime, default=datetime.utcnow)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+
+
