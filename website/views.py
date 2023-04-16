@@ -1,4 +1,5 @@
-from flask import Blueprint, render_template, flash
+from flask import Blueprint, render_template, flash, jsonify
+from flask_login import LoginManager, login_required, current_user
 from flask_login import current_user
 from flask import session
 from flask import request
@@ -60,6 +61,7 @@ def submit_form():
     return render_template('submit_form.html')
 
 @views.route('/deliverable_form', methods=['GET', 'POST'])
+@login_required
 def deliverable_form():
     if request.method == 'POST': 
         note = request.form.get('note')#Gets the note from the HTML 
@@ -70,7 +72,7 @@ def deliverable_form():
             new_note = Note(data=note, user_id=current_user.id)  #providing the schema for the note 
             db.session.add(new_note) #adding the note to the database 
             db.session.commit()
-            flash('Note added!', category='success')
+            flash('Deriverible successfully added for scheduling!', category='success')
 
     return render_template("deliverable_form.html", user=current_user)
 

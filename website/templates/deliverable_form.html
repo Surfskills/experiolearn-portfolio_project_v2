@@ -26,15 +26,8 @@
             
             {% block content %}
               <div class="container my-5">
-                <h1 class="text-center mb-4">Notes</h1>
-                <form method="POST" class="my-4">
-                    <div class="form-group">
-                      <textarea name="note" id="note" class="form-control"></textarea>
-                    </div>
-                    <div class="text-center">
-                      <button type="submit" class="btn btn-primary">Add Deriverable</button>
-                    </div>
-                  </form>
+                <h1 class="text-center mb-4">Deriverables</h1>
+
                 <ul class="list-group list-group-flush" id="notes">
                   {% for note in user.notes %}
                     <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -45,7 +38,14 @@
                     </li>
                   {% endfor %}
                 </ul>
-               
+                <form method="POST" class="my-4">
+                  <div class="form-group">
+                    <textarea name="note" id="note" class="form-control"></textarea>
+                  </div>
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Add Deriverable</button>
+                  </div>
+                </form>
               </div>
             {% endblock %}
 
